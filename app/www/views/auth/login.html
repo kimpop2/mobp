@@ -1,0 +1,54 @@
+<!-- *********************************************************************
+ * Copyright (c) 2014, COPYRIGHTⓒ2014 eBiz-Pro. ALL RIGHTS RESERVED.
+ *
+ * Project       : (주)신창코넥타 급여관리
+ * Program Name  : 로그인 화면
+ * File          : login.html
+ * Description   : 
+ *                 
+ * Author        :
+ * Creation Date :
+ * Updated Date  :
+ * ******************************************************************** -->
+ <ion-view class="login-view auth-view" cache-view="false">
+  <ion-content scroll="false">
+    <div class="row">
+      <div class="col col-center">
+        <div class="row">
+          <div class="col col-center">
+            <img ng-src="img/logo.png">
+          </div>
+        </div>
+        <div class="card login-container" content-tabs tabsdata='tabsdata'>
+          <form name="login_form" class="" novalidate ng-cloak>
+            <my-tabs>
+              <my-tab title="User">
+                <div class="list">
+                  <label class="item item-input">
+                    <input type="text" placeholder="사번" name="user_empno" ng-model="user.empno" required>
+                  </label>
+                  <label class="item item-input" show-hide-container>
+                    <input type="password" placeholder="비밀번호" name="user_password" ng-model="user.password" required show-hide-input>
+                  </label>
+                </div>
+              </my-tab>
+            </my-tabs>
+            <div class="item item-body bottom-content">
+              <button type="submit" class="button button-positive button-block" ng-click="doLogIn()" ng-disabled="login_form.user_empno.$invalid || login_form.user_password.$invalid">
+                로그인
+              </button>
+            </div>
+          </form>
+        </div>
+        <!-- <div class="alternative-actions">
+          <a class="forgot-password button button-small button-clear button-light" ui-sref="auth.forgot-password">
+            비번찾기
+          </a>
+          <a class="sign-up button button-small button-clear button-light" ui-sref="auth.signup">
+            회원가입
+          </a>
+        </div> -->
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

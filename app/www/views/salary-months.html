@@ -1,0 +1,70 @@
+<!-- *********************************************************************
+ * Copyright (c) 2014, COPYRIGHTⓒ2014 eBiz-Pro. ALL RIGHTS RESERVED.
+ *
+ * Project       : (주)신창코넥타 급여관리
+ * Program Name  : 급여리스트 화면
+ * File          : salary-months.html
+ * Description   : 
+ *                 
+ * Author        :
+ * Creation Date :
+ * Updated Date  :
+ * ******************************************************************** -->
+ <ion-view class="mobp-view">
+  <ion-nav-title> 
+    <span>급상여</span>
+  </ion-nav-title>
+  <ion-content>
+    <div class="box">
+      <div class="row caption">
+        <div class="col col-20 data-left">
+          <a class="button button-icon button-small icon ion-android-arrow-dropleft-circle" ng-click="prevList()"></a>
+        </div>
+        <div class="col append">{{year}}년 월별 급상여</div>
+        <div class="col append col-20 data-right">
+          <a class="button button-icon button-small icon ion-android-arrow-dropright-circle" ng-click="nextList()"></a>
+        </div>
+      </div>
+    </div>
+    <ion-list>
+      <ion-item ng-show="(salarymonths.length === 0)" >
+        <div class="item-content">
+          <div class="row row-list-padding" >
+            <div class="col data-title data-text">
+              자료가 없습니다.
+            </div><!-- end 1st col -->
+          </div><!-- end row row-no-padding -->
+        </div><!-- end item-content -->
+      </ion-item>
+      <ion-item ng-repeat="salary in salarymonths" class="item-icon-right mobp-item" ui-sref="app.salary({month: salary.pay_month})">
+        <div class="item-content">
+          <div class="row" >
+            <div class="col col-33 data-title">
+              {{salary.pay_month | tmonth: '0'}}
+            </div><!-- end 1st col -->
+            <div class="col">
+              <div class="row row-list-padding">
+                <div class="col col-20 data-right">총수령액</div>
+                <div class="col        data-right data-title">{{salary.total_income | number:0}}</div>
+                <div class="col col-10 data-left">&nbsp;원</div>
+              </div>
+              <div class="row row-list-padding">
+                <div class="col col-20 data-right assertive">공제합계</div>
+                <div class="col        data-right data-title assertive">{{salary.total_deduct | number:0}}</div>
+                <div class="col col-10 data-left assertive">&nbsp;원</div>
+              </div>
+              <div class="row row-list-padding">
+                <div class="col col-20 data-right positive">실수령액</div>
+                <div class="col        data-right data-title positive">{{salary.net_income   | number:0}}</div>
+                <div class="col col-10 data-left positive">&nbsp;원</div>
+              </div>
+            </div><!-- end 2nd col -->
+            <div class="col col-10">
+              <i class="icon ion-chevron-right"></i>
+            </div><!-- end 3rd col -->
+          </div><!-- end row row-no-padding -->
+        </div><!-- end item-content -->
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
