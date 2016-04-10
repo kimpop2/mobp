@@ -7,9 +7,6 @@ var sh          = require('shelljs');
 var sourcemaps  = require('gulp-sourcemaps');
 var templateCache = require('gulp-angular-templatecache');
 
-// 추가
-var clean       = require('gulp-clean');
-var rename      = require('gulp-rename');
 var bower_path  = './bower_components';
 var server_path = './';
 var app_path    = './app/www/';
