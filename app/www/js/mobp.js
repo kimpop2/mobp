@@ -180,7 +180,7 @@ angular.module('app', [
         url: "/app",
         abstract: true,
         cache: false,
-        templateUrl: "views/app/side-mobp.html",
+        templateUrl: "views/side-mobp.html",
         controller: 'AppCtrl'
     })
     .state('app.home', {
@@ -225,7 +225,7 @@ angular.module('app', [
         url: "/settings",
         views: {
             'menuContent': {
-                templateUrl: "views/app/settings.html",
+                templateUrl: "views/settings.html",
                 controller: 'SettingsCtrl'
             }
         }
@@ -234,7 +234,7 @@ angular.module('app', [
         url: "/profile",
         views: {
             'menuContent': {
-                templateUrl: "views/app/profile.html"
+                templateUrl: "views/profile.html"
             }
         }
     })
