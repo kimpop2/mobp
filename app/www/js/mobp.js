@@ -183,6 +183,15 @@ angular.module('app', [
         templateUrl: "views/app/side-mobp.html",
         controller: 'AppCtrl'
     })
+    .state('app.home', {
+        url: "/home",
+        views: {
+            'menuContent': {
+                templateUrl: "views/home.html",
+                controller: "HomeCtrl"
+            }
+        }
+    })
     .state('app.salary-months', {
         url: "/salary/salary-months/:year",
         views: {
